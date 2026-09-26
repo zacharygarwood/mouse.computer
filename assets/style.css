@@ -1,0 +1,72 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    background: #2a1c12;
+}
+
+#view {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+    image-rendering: pixelated;
+    touch-action: none;
+    opacity: 0;
+    transition: opacity 1.6s ease;
+}
+#view.ready { opacity: 1; }
+
+.placard {
+    position: fixed;
+    left: clamp(16px, 3vw, 40px);
+    bottom: clamp(14px, 3vh, 36px);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    color: #f3ead6;
+    text-shadow: 0 1px 2px rgba(20, 12, 6, .7), 0 0 18px rgba(20, 12, 6, .5);
+    pointer-events: none;
+    user-select: none;
+}
+
+.placard h1 {
+    margin: 0;
+    font-weight: 500;
+    font-size: clamp(17px, 1.6vw, 22px);
+    letter-spacing: .06em;
+}
+
+.placard p {
+    margin: .1em 0 0;
+    font-style: italic;
+    font-size: clamp(13px, 1.1vw, 16px);
+    opacity: .8;
+}
+
+.contact {
+    position: fixed;
+    right: clamp(16px, 3vw, 40px);
+    bottom: clamp(14px, 3vh, 36px);
+    margin: 0;
+    padding: .35em .75em .4em;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(15px, 1.2vw, 17px);
+    color: #f3ead6;
+    background: rgba(30, 20, 14, .72);
+    border: 1px solid rgba(243, 234, 214, .35);
+}
+
+.contact a {
+    color: #f7d9a3;
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: .18em;
+}
+
+.contact a:hover {
+    color: #fff3dc;
+}
+
+@media (max-width: 520px) {
+    .placard { bottom: calc(clamp(14px, 3vh, 36px) + 52px); }
+    .contact { right: auto; left: clamp(16px, 3vw, 40px); }
+}
